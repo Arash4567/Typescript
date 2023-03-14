@@ -125,6 +125,51 @@ console.log(bgColor);
 bgColor = [0, 255, 255];
 console.log(bgColor);
 
+/* -- Enum -- */
+enum Month {
+  Jan,
+  Feb,
+  Mar,
+  Apr,
+  May,
+  Jun,
+  Jul,
+  Aug,
+  Sep,
+  Oct,
+  Nov,
+  Dec
+};
 
+function isItSpring(month: Month) {
+  let isSpring: boolean;
+  switch (month) {
+      case Month.Mar:
+      case Month.Apr:
+      case Month.May:
+          isSpring = true;
+          break;
+      default:
+          isSpring = false;
+          break;
+  }
+  return isSpring;
+}
 
+console.log(isItSpring(Month.Jun));
 
+function logger(message: any): void {
+  console.log(message);
+}
+
+logger("SSSS")
+
+function raiseError(message: string): never {
+  throw new Error(message);
+}
+
+function reject() { 
+  return raiseError('Rejected!');
+}
+
+reject()
